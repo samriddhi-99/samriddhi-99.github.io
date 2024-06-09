@@ -1,23 +1,3 @@
-// $(document).ready(function() {
-//     $('.ab-link-blink a.smooth-scroll').on('click', function(e) {
-//         if (this.pathname == window.location.pathname && this.protocol == window.location.protocol && this.host == window.location.host) {
-//             if (this.hash !== "") {
-//                 e.preventDefault();
-//                 var hash = this.hash;
- 
-//                 $('html, body').animate({
-//                     scrollTop: $(hash).offset().top
-//                 }, 800, function() {
-//                         window.location.hash = hash;
-//                     }
-//                 );
-//             }
-//         } else {
-//             window.location = window.location;
-//         }
-//     });
-// });
-
 (function($) {
 
 	"use strict";
@@ -44,10 +24,8 @@ function fade_out() {
 	setTimeout(()=>{
 		$("#message_status").html("");
 	}, 6000);
-	
+
 }
-
-
 
 document.getElementById('form')
  .addEventListener('submit', function(event) {
@@ -68,25 +46,8 @@ document.getElementById('form')
 	  document.getElementById('message_status').innerHTML="Message sent!";
 	  btn.innerHTML = 'Submit';
 	  fade_out();
-		
-	
     }, (err) => {
       btn.value = 'Send Email';
       alert(JSON.stringify(err));
     });
 });
-
-// var btn = $('#button-to-top');
-
-// $(window).scroll(function() {
-//   if ($(window).scrollTop() > 300) {
-//     btn.addClass('show');
-//   } else {
-//     btn.removeClass('show');
-//   }
-// });
-
-// btn.on('click', function(e) {
-//   e.preventDefault();
-//   $('html, body').animate({scrollTop:0}, '300');
-// });
